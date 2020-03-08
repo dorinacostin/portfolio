@@ -1,0 +1,28 @@
+footer{
+		background: $title-color;
+		.col{
+			width: 100%;
+			text-align: center;
+			p{
+				width: 60%;
+				margin: auto;
+				color:$white;
+			}
+			ul{
+				@extend %flex-row;
+				justify-content:center;
+				padding-left: 0;
+				li{
+					margin: 0 .5rem;
+					a{
+						color:$secondary-color;
+						font-size: 1.5rem;
+						transition:.3s all ease-out;
+						&:hover{
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+  }

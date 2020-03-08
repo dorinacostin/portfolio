@@ -1,0 +1,83 @@
+$screen-xs-max: 575.98px;
+$screen-sm-max:  767.98px; 
+$screen-md-max: 991.98px;
+$screen-lg-max: 1199.98px;
+$screen-xl-max: 1200px;
+
+@mixin xs {
+   @media (max-width: #{$screen-xs-max}) {
+       @content;
+   }
+}
+@mixin sm {
+   @media (max-width: #{$screen-sm-max}) {
+       @content;
+   }
+}
+@mixin md {
+   @media (max-width: #{$screen-md-max}) {
+       @content;
+   }
+}
+@mixin lg {
+   @media (max-width: #{$screen-lg-max}) {
+       @content;
+   }
+}
+@mixin xl {
+   @media (max-width: #{$screen-xl-max}) {
+       @content;
+   }
+}
+
+%flexbox{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	vertical-align:middle;
+}
+
+%flex-row{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+%flex-column{
+	display: flex;
+	flex-direction: column;
+	flex-wrap:wrap;
+}
+%button{
+	color: $white;
+	background:  $secondary-color;
+	padding: .5rem 2rem;
+	border-radius: 5rem;
+	font-weight: bold;
+	border: .15rem solid  $secondary-color;
+	transition: .3s all ease-out;
+}
+%button-transparent{
+	color: $title-color;
+	background: transparent;
+	padding: .5rem 2rem;
+	border-radius: 5rem;
+	font-weight: bold;
+	border: .15rem solid  $secondary-color;
+	transition: .3s all ease-out;
+}
+%title {
+	h3{
+		color: $secondary-color;
+		font-weight: normal;
+		margin: 0;
+	}
+	h2{
+		font-size: 3rem;
+		font-weight: 900;
+		color: $title-color;
+		margin: 0;
+		@include sm {
+			font-size: 2rem;
+		}
+	}
+}

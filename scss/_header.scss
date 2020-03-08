@@ -1,0 +1,66 @@
+header{
+	width: 100%;
+	background: $white;
+	position: fixed;
+	top:0;
+	z-index: 300;
+	transition: .3s all ease;
+	.navigation{
+		@extend %flexbox;
+		.logo{
+			width: 20%;
+		}
+		.nav-menu{
+      align-self: center;
+      width: 80%;
+      .toggle{
+      	@include md {
+      		display: flex;
+      	}
+      	display: none;
+      	flex-direction:column;
+      	align-items:flex-end;
+      	width: 100%;
+      	padding: 1rem;
+      	span{
+      		background-color:$secondary-color;
+      		width: 2rem;
+      		height: .15rem;
+      		margin: .2rem;
+      	}
+      }
+      ul{
+				display: flex;
+				flex-direction:row;
+				list-style: none;
+				justify-content: flex-end;
+				padding-left: 0;
+				@include md {
+					display: none;
+      		flex-direction:column;
+      		li{
+      			margin-bottom: 1rem;
+      		}
+      	}
+      	.show{
+      		display: flex;
+      		margin-bottom: 3rem;
+      		width: 100%;
+      	}
+			  li{
+				  padding: 0 1rem;
+				  align-self:center;
+				  a{
+				  	font-weight: bold;
+				  	color: $title-color;
+				  	transition: .3s all ease-out;
+				  	cursor:pointer;
+				  	&:hover{
+				  		color: $secondary-color;
+				  	}
+				  }
+			  }
+	    }
+		}
+	}
+}

@@ -1,0 +1,691 @@
+* {
+    box-sizing: border-box;
+}
+body{
+	font-family: $main-font;
+	line-height: 1.8;
+	margin: 0;
+	padding: 0;
+	.scroll-nav{
+		background-color:$background;
+	}
+	a{
+		text-decoration: none;
+	}
+	li{
+		list-style: none;
+	}
+	p{
+		color: $text-color;
+		font-size: .85rem;
+	}
+	.current{
+		color: $secondary-color!important;
+	}
+	.title{
+		@extend %title;
+		  width: 100%;
+		  text-align: center;
+	}
+	section{
+    padding:2rem;
+    @include sm {
+    	padding: 1rem;
+    }
+	  .container{
+			max-width: 1140px;
+	    padding:0 1rem;
+	    margin: auto;
+		}
+	}
+	.row{
+		@extend %flex-row;
+	}
+  .btn{
+  	display: flex;
+		align-self: center;
+		justify-content:flex-end;
+		@include sm {
+			display: block;
+		}
+		a{
+			color: $white;
+			background:  $secondary-color;
+			padding: .5rem 2rem;
+			border-radius: 5rem;
+			font-weight: bold;
+			border: .15rem solid  $secondary-color;
+			transition: .3s all ease-out;
+			&:hover{
+        color: $secondary-color!important;
+        background: transparent;
+			}
+		}
+	}
+	.button-fixed{
+		background: $background;
+		position: fixed;
+		bottom:2rem;
+		right: 2rem;
+		padding: 1.4rem 1.8rem;
+		border-radius: 50%;
+		box-shadow: $box-shadow-button;
+		z-index: 300;
+		@include md {
+			display: none;
+		}
+	  i{
+			color: $white;
+		}
+	}
+	.name{
+		background:$background;
+		 margin-top: 7rem ;
+		 @include md {
+          padding: 5rem 0;
+		  	}
+		.user{
+			position: relative;
+			@extend %flex-row;
+			.presentation{
+				width: 50%;
+				align-self:center;
+				@include md {
+          width: 100%;
+          text-align: center;
+		  	}
+			  @extend %flex-column;
+			  h1{
+					font-size: 3rem;
+					font-weight: 900;
+					color: $title-color;
+					margin: 0;
+					@include sm {
+						font-size: 2rem;
+					}
+				}
+				h2{
+					margin: 0;
+					color: $secondary-color;
+				}
+				h3{
+					margin: 0;
+				}
+				p{
+					width: 80%;
+					@include md {
+	          margin:1rem auto;
+	      
+	          text-align: center;
+		  	  }
+				}
+		  }
+		  .buttons{
+				font-size: .8rem;
+				@include md {
+          margin: auto; 
+		  	}
+		  	@include sm {
+					a{
+						width: 100%;
+					}
+				}
+			  @extend %flex-row;
+			  a:first-of-type {
+				  margin-right: 1.5rem;
+				  @extend %button;
+				  @include sm {
+					margin:0 0 1rem;
+				}
+				  &:hover{
+					@extend %button-transparent;
+				  }
+			  }
+			  a:nth-child(2) {
+				  @extend %button-transparent;
+				  &:hover{
+					@extend %button;
+				  }
+			  }
+		  }
+		  .img{
+		  	@include md {
+          display: none;
+		  	}
+		  	width: 50%;
+		  	padding: 2rem;
+		  	align-self:center;
+		  	img{
+		  		max-width: 100%;
+		  		display: block;
+		  		margin-right: auto;
+		  	  margin-left: auto;
+		  	}
+		  }
+  	}
+  	.social-media{
+  		position: absolute;
+  		top:50%;
+  		left: 1%;
+  		ul{
+  			@extend %flex-column;
+  			padding-left: 0;
+  			a{
+  				color:black;
+  				transition:.3s all ease-out;
+  				&:hover{
+  					color: $secondary-color;
+  				}
+  			}
+  		}
+  	}
+		.features{
+			width: 60%;
+			position: absolute;
+			bottom:-10rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: $white;
+      box-shadow:$box-shadow;
+      border-radius: 5rem;
+      padding:2rem;
+			@extend %flex-row;
+			justify-content:center;
+			@include md {
+				display: none;
+			}
+			.col{
+				width: 33.333%;
+				padding:0 3%;
+				box-sizing:border-box;
+      	@extend %flex-row;
+      	@include xl {  
+      		width: 50%;
+      		&:last-of-type{
+      			display: none;
+      		}
+      	}
+      	p{
+      		margin: 0;
+      		padding-left:2rem;
+      		font-weight: bold;
+      		color: $title-color;
+      		align-self:center;
+      		span{
+      			font-weight: normal;
+      			color: $secondary-color;
+      		}
+      	}
+      	&:nth-child(2) {
+      		@include lg {
+    		  border-right: none;
+        }
+      		border-left: $border;
+      		border-right: $border
+      	}
+      	i{
+      		background: $secondary-color;
+      		border-radius: 50%;
+      		color: $white;
+      		padding: 1rem;
+      	}
+			}
+    }		
+	}
+	.about{
+		background-image: url('../img/background.png');
+		background-size: cover;
+		background-position: top;
+		padding: 8rem 0;
+		@include md {
+		 	padding: 4rem 0;
+		}
+		.user-img{
+		  width: 40%;
+		  padding:0 2.5rem;
+		  @include md {
+		  	display: none;
+		  }
+		  img{
+		  	width: 100%;
+		  	align-self:center;
+		  }
+	  }
+	  .about-text{
+	  	width:60%;
+	  	padding: 0 2.5rem;
+	    @extend %title;
+	    @include md {
+	     	width: 100%;
+	     	h2,h3{
+	     		text-align: center;
+	     	}
+	    }
+	    @include sm {
+	      padding: 0;
+	    }
+	    .contact{
+	    	font-weight: bold;
+	    	padding-right:3rem;
+	    	@extend %flex-column;
+	    	@include sm {
+				  font-size: .85rem;
+				  padding-right:.3rem;
+				}
+	    	i{
+	    		color: $secondary-color;
+	    		padding-right: 1rem;
+	    	}
+	    }
+	    .contact-details{
+	    	font-weight: bold;
+	    	p{
+	    		margin:.2rem 0;
+	    		@include xs {
+				  font-size: .8rem;
+				  }
+	    	span{
+	    		padding-right: 2rem;
+	    		@include sm {
+				    padding-right: 1rem;
+				  }
+				  @include xs {
+				    padding-right: .3rem;
+				  }
+	    	}
+	    	}
+	    }
+	    .interests{
+	      @include xs {
+	    	text-align: center;
+	    	width: 80%;
+	    	margin: auto;
+	      }
+	    	.interests-row{
+		    	@extend %flex-row;
+		    	@include xs {
+	    	    justify-content:center;
+	        }
+		    	span{
+		    		color:$title-color; 
+		    		padding-right: 2rem;
+		    		font-size: .9rem;
+		    		margin-bottom: 1rem;
+		    		i{
+		    			color: $secondary-color;
+		    			padding-right: 1rem;
+		    		}
+		    	}
+		    }
+	    }  
+	  }
+	}
+	#skills{
+		 background-color:$main-color;
+		 padding: 3rem 0;
+		.bars{
+			width: 50%;
+			padding:0 2.5rem; 
+			@include md {
+				width: 100%;
+			}
+			@include sm {
+				padding: 0;
+			}
+			.progress{
+				width: 100%;
+				height: .7rem;
+				background: $bar-color;
+				.progress-bar{
+					height: 100%;
+					background-color:$secondary-color;
+				}
+			}
+		}
+	}
+	.qualification{
+		background: $white;
+		.row{
+			justify-content:center;
+			.education,.experience{
+				width: 50%;
+				padding: 0 2.5rem;
+				@include md {
+					width: 100%;
+					text-align: center;
+			  }
+			  @include sm {
+				padding:0;
+			  }
+				p{
+					font-size: 1.5rem;
+					font-weight: bold;
+					color: $title-color;
+					i{
+						padding-right: 1rem;
+					}
+				}
+				.text{
+					position: relative;
+					border-left:$main-border;
+					padding-left: 2rem;
+					margin-top:1.5rem;
+					h3{
+						margin: 0;
+					}
+					p{
+						font-size: 1rem;
+						margin: 0;
+						color:$blue;
+						font-weight: normal;
+					}
+					span{
+						color:$secondary-color;
+						font-size:.8rem;
+						i{
+							padding-right: .7rem;
+						}
+					}
+					&::before{
+					position: absolute;
+					content: "";
+					left: -1.5%;
+					width: 1rem;
+					height: 1rem;
+					border-radius: 50%;
+					background-color:$secondary-color;
+					@include xs {
+						display: none;
+					}
+					}
+				}
+			}
+		}
+		.offers{
+			max-width: 100%;
+			.title{
+				padding: 4rem 0 2rem;
+			}
+			.offer{
+				position: relative;
+				width: 30%;
+				border: $border;
+				border-top-right-radius:2.5rem;
+				margin:2rem 1rem ;
+				padding: 2.5rem 1.5rem .5rem;
+				transition: .3s all ease-out;
+				@include md {
+					width: 100%;
+				}
+				h4{
+					margin: 0;
+				}
+				i{
+					position: absolute;
+					top: -20%;
+					color: $white;
+					padding:1rem;
+					border-radius: .5rem;
+					background-color: $secondary-color;
+				}
+				&:hover{
+					background-color:$secondary-color;
+					color: $white;
+					p{
+						color:white;
+					}
+					i{
+						color:$secondary-color;
+						background-color: $white;
+						box-shadow: 2px -6px 20px 1px rgba(255,152,73,0.18);
+					}
+				}
+			}
+		}
+	}
+	#portfolio{
+		background-color:$main-color;
+		padding: 3rem 0;
+		ul{
+			display: flex;
+			flex-direction:row;
+			justify-content:space-around;
+			width: 40%;
+			text-align: center;
+			margin: auto;
+			padding: 1rem 0;
+			@include md {
+				width: 60%;
+			}
+			@include sm {
+				width: 80%;
+			}
+			@include xs {
+				width: 100%;
+				font-size: .8rem;
+			}
+			li>a{
+				color:$secondary-color;
+				font-weight: bold;
+				& {
+					color: $white;
+					background-color:$secondary-color;
+					padding:.5rem 1rem;
+					border-radius: 25rem;
+					border:$main-border;
+					&:hover{
+						background: transparent;
+						color: $secondary-color;
+					}
+				}
+			}
+		}
+		.work{
+			position: relative;
+			width: 30%;
+			margin: 1rem;
+			cursor: pointer;
+			@include lg {
+				width: 30%;
+			}
+			@include md {
+				width: 28.9%;
+			}
+			@include sm {
+				width: 100%;
+			}
+			img{
+				width: 100%;
+				border-radius: 1rem;
+			}
+			.overlay{
+				position: absolute;
+				width: 100%;
+				height: 98%;
+				top: 0;
+				left: 0;
+				content: "";
+				background: hsla(348, 83%, 65%, .8);
+				border-radius: 1rem;
+				opacity: 0;
+				transition:1s all ease-out;
+			}
+			.text-overlay{
+				width: 100%;
+				position: absolute;
+				top:38%;
+				text-align: center;
+				opacity: 0;
+				transition:.3s all ease-out;
+				a{
+					color: $white;
+					font-size: 1.5rem;
+				}
+			}
+			&:hover{
+				.overlay,.text-overlay{
+					opacity: 1;
+				}
+			}
+		}
+		.btn{
+			margin: auto;
+			justify-content:center;
+			@include sm {
+			 	display: block;
+			 	a{
+			 		display: block;
+			 		text-align: center;
+			 	}
+			}
+		}
+	}
+	.contact-me{
+		padding: 3rem 0;
+		background-image:linear-gradient(25deg, rgba(255,255,255,.6) 100%, rgba(249,63,113,0.73126754119616597) 100%),url('../img/color-bg.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		text-align: center;
+		.title{
+      width: 65%;
+      text-align: left;
+      margin: 0 1rem;
+      @include md {
+      	width: 100%;
+      	text-align: center;
+      	margin: 0;
+      }
+      p{
+      	font-size: 1rem;
+      }
+		}
+		.btn{
+			justify-content:left;
+			margin: 0 1rem;
+			width: 100%;
+			@include md {
+				justify-content:center;
+				margin-top: 2rem;
+			}
+			a:hover{
+				background: $white;
+				color: $secondary-color;
+				border-color: $white;
+			}
+		}
+	}
+	.contact-form{
+		background-image:linear-gradient(90deg, rgba(255,255,255,.9) 100%, rgba(214,214,214,0.9783263647255778) 100%), url('../img/img.jpg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		.form{
+			width: 60%;
+			@include lg {
+				width: 50%;
+			}
+			@include md {
+			  width: 100%;
+			}
+			form {
+				margin: 1rem;
+				.row{
+					width: 100%;
+					input{
+						width: 48.7%;
+						font-family: $main-font;
+						padding: .7rem 1rem;
+						&:first-of-type{
+							margin-right: 1rem;
+							@include lg {
+								margin-right:0;
+							}
+						}
+						@include lg {
+							width: 100%;
+						}
+						@include md {
+							width: 100%;
+						}
+					}
+				}
+				input, textarea{
+					width: 100%;
+					border:$border;
+					font-family: $main-font;
+					padding: .7rem 1rem;
+					margin-bottom: 1rem;
+				}
+			}
+		}
+		.details{
+			width: 40%;
+			padding: 1rem;
+			@include md {
+			  width: 100%;
+			  display: flex;
+			  justify-content:center;
+			  font-size: .7rem;
+			}
+			@include sm {
+				flex-direction:column;
+			}
+		  @include xs {
+				padding:0;
+			}
+			.row{
+				margin-bottom: 2rem;
+				@include sm {
+				  flex-direction:column;
+				  margin: 1rem 2rem;
+				  text-align: center;
+				}
+			}
+	    i{
+				background-color: $secondary-color;
+				padding: 1rem;
+				border-radius: 50%;
+				color: $white;
+				@include md {
+				  font-size: .8rem;
+				}
+				@include sm {
+				  margin-bottom: 1rem;
+				}
+			}
+			.text{
+				padding-left: 1.5rem;
+				@include md {
+				  padding:0 1rem;
+				}
+				@include sm {
+				   padding:0;
+				}
+				span{
+					font-size: .8rem;
+					color: $text-color;
+					margin: 0;
+				}
+				h4{
+					margin: 0;
+				}
+			}
+		}
+		.btn{
+      justify-content:flex-start;
+      @include md {
+     	  justify-content:center;
+      }
+      @include sm {
+			 	display: block;
+			 	margin-bottom: 2rem;
+			 	a{
+			 		display: block;
+			 		text-align: center;
+			 	}
+			}
+		}
+	}
+}
