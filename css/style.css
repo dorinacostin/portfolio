@@ -164,6 +164,7 @@ body {
       color: #fff; }
   body .name {
     background: #aad3d1;
+    position:relative;
     margin-top: 7rem; }
     @media (max-width: 991.98px) {
       body .name {
@@ -235,7 +236,7 @@ body {
     body .name .features {
       width: 60%;
       position: absolute;
-      bottom: -10rem;
+      bottom: -3rem;
       left: 0;
       right: 0;
       margin: auto;
