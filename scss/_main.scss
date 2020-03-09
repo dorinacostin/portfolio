@@ -80,6 +80,7 @@ body{
 	}
 	.name{
 		background:$background;
+		position:relative;
 		 margin-top: 7rem ;
 		 @include md {
           padding: 5rem 0;
@@ -182,7 +183,7 @@ body{
 		.features{
 			width: 60%;
 			position: absolute;
-			bottom:-10rem;
+			bottom:-3rem;
       left: 0;
       right: 0;
       margin: auto;
